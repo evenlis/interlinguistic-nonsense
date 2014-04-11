@@ -12,8 +12,8 @@ fi
 
 
 javah -jni -d ./headers -classpath ./lib $1
-gcc -fPIC -o ./lib/$1.o -c ./src/$1.c -I /usr/lib/jvm/java-7-oracle/include -I /usr/lib/jvm/java-7-oracle/include/linux -I ./headers
-gcc ./lib/$1.o -shared -o ./lib/lib$1.so -Wl,-soname,$1
+gcc --std=c99 -fPIC -o ./lib/$1.o -c ./src/$1.c -I /usr/lib/jvm/java-7-oracle/include -I /usr/lib/jvm/java-7-oracle/include/linux -I ./headers
+gcc --std=c99 ./lib/$1.o -shared -o ./lib/lib$1.so -Wl,-soname,$1
 cd lib
 export LD_LIBRARY_PATH=.
 java $CALLER_NAME

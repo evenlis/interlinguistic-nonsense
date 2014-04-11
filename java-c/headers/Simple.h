@@ -15,6 +15,22 @@ extern "C" {
 JNIEXPORT void JNICALL Java_Simple_print
   (JNIEnv *, jobject);
 
+/*
+ * Class:     Simple
+ * Method:    print_arg
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_Simple_print_1arg
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     Simple
+ * Method:    sum_array
+ * Signature: ([I)I
+ */
+JNIEXPORT jint JNICALL Java_Simple_sum_1array
+  (JNIEnv *, jobject, jintArray);
+
 #ifdef __cplusplus
 }
 #endif
